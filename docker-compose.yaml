@@ -6,6 +6,7 @@ services:
     - ./served-config/envoy.yaml:/etc/envoy/config.yaml 
     - ./configs/security/tls.crt:/etc/certs/tls.crt
     - ./configs/security/tls.key:/etc/certs/tls.key
+    - /tmp/envoytap:/tmp/tap
     entrypoint: /usr/local/bin/envoy -c /etc/envoy/config.yaml 
     networks:
     - network
